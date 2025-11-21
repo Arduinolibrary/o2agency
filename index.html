@@ -1,91 +1,501 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>woohimedia</title>
-		<meta charset="utf-8" />
-		<meta name="facebook-domain-verification" content="suaa528fbs4h6i0kags6gsjqbm4q2g" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="landing is-preload">
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O2 Agency - Let Your Brand Breathe</title>
+    <style>
+        :root {
+            --primary-blue: #0066cc;
+            --light-blue: #e6f2ff;
+            --dark-blue: #004d99;
+            --accent-blue: #3399ff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .logo span {
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--text-light);
+        }
+        
+        .tagline {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 40px 0 20px;
+            color: var(--primary-blue);
+        }
+        
+        .o2-formula {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--primary-blue);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-blue);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: #f9f9f9;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+        }
+        
+        /* Global Presence Section */
+        .global-presence {
+            text-align: center;
+        }
+        
+        .map-placeholder {
+            height: 300px;
+            background-color: var(--light-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+        
+        /* Clients Section */
+        .clients {
+            background-color: #f9f9f9;
+        }
+        
+        .clients-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .client-logo {
+            height: 60px;
+            opacity: 0.7;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+        }
+        
+        .client-logo:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+        
+        /* Contact Section */
+        .contact {
+            text-align: center;
+        }
+        
+        .contact-info {
+            margin: 30px 0;
+        }
+        
+        .email-link {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .email-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .footer-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-left: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-links {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">O<span>2</span></div>
+                <ul class="nav-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#clients">Our Clients</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-			<!-- Header -->
-				<header id="header" class="alt">
-					<h1><a href="index.html">woohimedia</a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-						</ul>
-					</nav>
-				</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>O2 Agency</h1>
+            <p>O2 is a global marketing agency that brings oxygen to brands-fueling their influence, flow, and growth across markets.</p>
+            <p>Like oxygen gives life, we energize brands with visibility and connection, helping them stay dynamic, relevant, and full of momentum in a changing world.</p>
+            
+            <div class="tagline">O2 Your Brand.</div>
+            <p>Let it breathe. Let it move. Let it grow.</p>
+            
+            <div class="o2-formula">$$\text{O}_{2}\text{ Your Brand.}$$</div>
+            <p>We bring oxygen to brands through influence, communication, and connection</p>
+            
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Get Started</button>
+                <button class="btn btn-outline">Learn More</button>
+            </div>
+        </div>
+    </section>
 
-			<!-- Banner -->
-				<section id="banner">
-					<h2>woohimedia</h2>
-					<p>World Class PR, Social Media and Events</p>
-				</section>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>O2 is a global marketing agency specializing in influencer marketing, social media strategy, and brand communication.</p>
+            </div>
+        </div>
+    </section>
 
-			<!-- Main -->
-				<section id="main" class="container">
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer comprehensive marketing solutions to fuel your brand's growth across global markets.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Influencer Marketing</h3>
+                    <p>We connect brands with creators who matter- building authentic conversations and measurable impact across YouTube, TikTok, Instagram, and beyond.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Social Media Marketing</h3>
+                    <p>We manage content, community, and paid campaigns across all major platforms-driving consistent engagement and social buzz to strengthen brand presence and growth.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Creator Content Creativity</h3>
+                    <p>We co-create and produce tailor-made content with influencers to enhance storytelling and performance.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Media Communication</h3>
+                    <p>We build visibility and influence for brands through PR strategy, press releases, media relations, and curated media events strengthening reputation and trust across global markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					<section class="box special">
-						<header class="major">
-							<h2>Woohimedia is a global leading specialist PR, 
-							<br/> communications and events consultancy.
-							</h2>
-							<p>Woohimedia supports a wide range of variety clients on a global, regional, and country-specific scale.</p>
-						</header>
-						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
-					</section>
+    <!-- Global Presence Section -->
+    <section class="section global-presence">
+        <div class="container">
+            <div class="section-title">
+                <h2>Global Presence</h2>
+                <p>We operate across international markets, helping brands expand their reach globally.</p>
+            </div>
+            
+            <div class="map-placeholder">
+                Global Operations Map
+            </div>
+        </div>
+    </section>
 
-					<section class="box special features">
-						<div class="features-row">
-							<section>
-								<span class="icon solid major fa-bolt accent2"></span>
-								<h3>Media Strategy</h3>
-								<p>Assist client to build up communication strategy</p>
-							</section>
-							<section>
-								<span class="icon solid major fa-chart-area accent3"></span>
-								<h3>Press Exposure</h3>
-								<p>Guarantee media exposure for client</p>
-							</section>
-						</div>
-						<div class="features-row">
-							<section>
-								<span class="icon solid major fa-cloud accent4"></span>
-								<h3>Social Media</h3>
-								<p>Build up social media campaign</p>
-							</section>
-							<section>
-								<span class="icon solid major fa-lock accent5"></span>
-								<h3>Event</h3>
-								<p>Organize events to win media exposure</p>
-							</section>
-						</div>
-					</section>
-				</section>
+    <!-- Clients Section -->
+    <section id="clients" class="section clients">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Clients</h2>
+                <p>Trusted By Brands Expanding Internationally</p>
+            </div>
+            
+            <div class="clients-logos">
+                <!-- Client logos would go here -->
+                <div class="client-logo">Client Logo 1</div>
+                <div class="client-logo">Client Logo 2</div>
+                <div class="client-logo">Client Logo 3</div>
+                <div class="client-logo">Client Logo 4</div>
+                <div class="client-logo">Client Logo 5</div>
+            </div>
+        </div>
+    </section>
 
-			
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch to learn how O2 can energize your brand</p>
+            </div>
+            
+            <div class="contact-info">
+                <p>Email us at: <a href="mailto:info@o2agency.net" class="email-link">info@o2agency.net</a></p>
+            </div>
+        </div>
+    </section>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-
-						<li><a href="https://www.facebook.com/Woohi-Media-101992535638794" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-
-					</ul>
-				</footer>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-	</body>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">O<span>2</span></div>
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                &copy; 2023 O2 Agency. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
