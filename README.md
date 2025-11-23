@@ -1,41 +1,20 @@
-# O₂ Agency Website
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-基于 React, Three.js, 和 Tailwind CSS 构建的创意营销公司官网。
+# Run and deploy your AI Studio app
 
-## 🚀 快速开始
+This contains everything you need to run your app locally.
 
-### 1. 安装
-确保您安装了 Node.js。下载所有文件到本地文件夹后，运行：
+View your app in AI Studio: https://ai.studio/apps/temp/1
 
-```bash
-npm install
-```
+## Run Locally
 
-### 2. 本地开发
-启动本地开发服务器：
+**Prerequisites:**  Node.js
 
-```bash
-npm run dev
-```
 
-### 3. 构建生产版本
-构建用于部署的静态文件：
-
-```bash
-npm run build
-```
-构建完成后，文件将位于 `dist` 目录中。
-
-## 🌐 部署到 GitHub Pages
-
-1. 在 GitHub 上创建一个新仓库（例如 `o2-agency`）。
-2. 打开 `vite.config.ts`，修改 `base` 配置：
-   ```typescript
-   base: '/o2-agency/',
-   ```
-3. 运行构建：
-   ```bash
-   npm run build
-   ```
-4. 将代码推送到 GitHub。
-5. 使用 `gh-pages` 分支或手动将 `dist` 文件夹的内容部署到 GitHub Pages 设置中。
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
